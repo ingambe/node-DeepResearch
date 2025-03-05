@@ -44,6 +44,7 @@ export const OPENAI_API_KEY = env.OPENAI_API_KEY;
 export const JINA_API_KEY = env.JINA_API_KEY;
 export const BRAVE_API_KEY = env.BRAVE_API_KEY;
 export const SERPER_API_KEY = env.SERPER_API_KEY;
+export const WANDB_API_KEY = env.WANDB_API_KEY;
 export const SEARCH_PROVIDER = configJson.defaults.search_provider;
 export const STEP_SLEEP = configJson.defaults.step_sleep;
 
@@ -132,6 +133,7 @@ export function getModel(toolName: ToolName) {
 if (LLM_PROVIDER === 'gemini' && !GEMINI_API_KEY) throw new Error("GEMINI_API_KEY not found");
 if (LLM_PROVIDER === 'openai' && !OPENAI_API_KEY) throw new Error("OPENAI_API_KEY not found");
 if (!JINA_API_KEY) throw new Error("JINA_API_KEY not found");
+if (!WANDB_API_KEY) throw new Error("WANDB_API_KEY not found");
 
 // Log all configurations
 const configSummary = {

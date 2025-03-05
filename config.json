@@ -7,7 +7,8 @@
     "JINA_API_KEY": "",
     "BRAVE_API_KEY": "",
     "SERPER_API_KEY": "",
-    "DEFAULT_MODEL_NAME": ""
+    "DEFAULT_MODEL_NAME": "",
+    "WANDB_API_KEY": ""
   },
   "defaults": {
     "search_provider": "jina",
