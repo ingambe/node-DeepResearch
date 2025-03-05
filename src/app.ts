@@ -13,12 +13,22 @@ import {TokenTracker} from "./utils/token-tracker";
 import {ActionTracker} from "./utils/action-tracker";
 import {ObjectGeneratorSafe} from "./utils/safe-generator";
 import {jsonSchema} from "ai"; // or another converter library
+import * as weave from 'weave';
 
 const app = express();
 
 // Get secret from command line args for optional authentication
 const secret = process.argv.find(arg => arg.startsWith('--secret='))?.split('=')[1];
 
+// Initialize weave
+(async () => {
+  try {
+    await weave.init('deep_research');
+    console.log('Weave initialized successfully');
+  } catch (error) {
+    console.error('Failed to initialize weave:', error);
+  }
+})();
 
 app.use(cors());
 app.use(express.json({
